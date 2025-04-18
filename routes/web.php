@@ -1,10 +1,19 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [IndexController::class, 'index']);
+Route::get('dokumentasi/api', [IndexController::class, 'api']);
+Route::get('dokumentasi/api/token', [IndexController::class, 'token']);
+
+Route::get('dokumentasi/api/customer', [IndexController::class, 'customer']);
+Route::get('dokumentasi/api/customer/all', [IndexController::class, 'customer_all']);
+Route::get('dokumentasi/api/customer/detail', [IndexController::class, 'customer_detail']);
+Route::get('dokumentasi/api/customer/add', [IndexController::class, 'customer_add']);
+Route::get('dokumentasi/api/customer/delete', [IndexController::class, 'customer_delete']);
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');

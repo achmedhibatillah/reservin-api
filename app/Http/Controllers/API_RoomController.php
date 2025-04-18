@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Facility;
 use App\Models\Room;
 use App\Models\RoomImage;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class API_RoomController extends Controller
 
         foreach ($data as $x) {
             $x['images'] = RoomImage::where('room_id', $x['room_id'])->get();
+            $x['facility'] = Facility::where('room_id', $x['room_id'])->get();
         }
 
         return $data;

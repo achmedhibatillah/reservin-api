@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class API_CustomerController extends Controller
 {
@@ -25,7 +26,7 @@ class API_CustomerController extends Controller
             'customer_id' => LogicController::generateUniqueId('customer', 'customer_id'),
             'customer_fullname' => $request->customer_fullname,
             'customer_email' => $request->customer_email,
-            'customer_pass' => $request->customer_pass,
+            'customer_pass' => Hash::make($request->customer_pass),
         ];
 
         Customer::create($data);

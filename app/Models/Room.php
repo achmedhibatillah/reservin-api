@@ -20,6 +20,5 @@ class Room extends Model
         'room_available',
         'room_start',
         'room_end',
-        'created_at'
     ];
 }
