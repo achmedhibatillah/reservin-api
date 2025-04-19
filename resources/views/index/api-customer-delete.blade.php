@@ -37,9 +37,6 @@
         </div>
         <div class="">
             <p class="m-0">Request x-www-form :</p>
-            @if(!$customers->isNotEmpty())
-            <p class="m-0 ms-2 fsz-10 text-danger"><i class="fas fa-exclamation-circle me-1"></i>Data customer masih kosong. Tambah <a href="{{ url('dokumentasi/api/customer/add') }}" class="td-hover">di sini.</a></p>
-            @endif
             <ul>
                 <li>
                     <p class="m-0">access_token</p>
@@ -51,6 +48,9 @@
                 </li>
             </ul>
         </div>
+        @if(!$customers->isNotEmpty())
+            <p class="m-0 ms-2 fsz-10 text-danger mb-3"><i class="fas fa-exclamation-circle me-1"></i>Data customer masih kosong. Tambah <a href="{{ url('dokumentasi/api/customer/add') }}" class="td-hover">di sini.</a></p>
+        @endif
         <div class="d-flex">
             <button type="submit" class="btn btn-danger d-block">coba <i class="fas fa-external-link-alt"></i></button>
         </div>

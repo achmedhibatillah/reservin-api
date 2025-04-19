@@ -23,7 +23,7 @@
 <hr>
 <div class="">
     <p class="m-0 fsz-10 text-secondary">Tabel utama</p>
-    <p class="fw-bold">customer</p>
+    <p class="fw-bold">admin</p>
     <p class="m-0 fsz-10 text-secondary">Tabel yang berelasi</p>
     <p class="fw-bold">booking: customer (1) - booking (M)</p>
 </div>
@@ -105,5 +105,5 @@
 </div>
 <hr>
 <div class="d-flex justify-content-start">
-    <img src="{{ asset('assets/images/static/erd-customer.png') }}" class="w-75">
+    <img src="{{ asset('assets/images/static/erd-admin.png') }}" class="w-75">
 </div>

@@ -16,6 +16,8 @@ Route::get('dokumentasi/api/customer/add', [IndexController::class, 'customer_ad
 Route::get('dokumentasi/api/customer/update', [IndexController::class, 'customer_update']);
 Route::get('dokumentasi/api/customer/delete', [IndexController::class, 'customer_delete']);
 
+Route::get('dokumentasi/api/admin', [IndexController::class, 'admin']);
+
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

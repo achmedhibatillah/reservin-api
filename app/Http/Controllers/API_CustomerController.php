@@ -18,6 +18,14 @@ class API_CustomerController extends Controller
     public function detail($customer_id)
     {
         $data = Customer::where('customer_id', $customer_id)->first();
+
+        if (!$data) {
+            return [
+                'status' => 'error',
+                'message' => 'Data not found.',
+            ];
+        }
+
         return $data;
     }
 
@@ -91,7 +99,7 @@ class API_CustomerController extends Controller
         if (!$olddata) {
             return [
                 'status' => 'error',
-                'message' => 'Customer not found.',
+                'message' => 'Data not found.',
             ];
         }
 

@@ -116,6 +116,7 @@ class IndexController extends Controller
         ];
 
         $tables = DB::select('SHOW TABLES');
+        $customers = Customer::get();
 
         return 
         view('index/templates-header') . 
@@ -125,6 +126,7 @@ class IndexController extends Controller
         view('index/api-customer-detail', [
             'info' => $info,
             'tables' => $tables,
+            'customers' => $customers,
         ]) . 
         view('index/templates-footbar') . 
         view('index/templates-footer');
@@ -195,6 +197,28 @@ class IndexController extends Controller
             'info' => $info,
             'tables' => $tables,
             'customers' => $customers,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function admin()
+    {
+        $info = [
+            'page' => 'api-admin',
+            'title' => 'Akses data admin'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-admin', [
+            'info' => $info,
+            'tables' => $tables,
         ]) . 
         view('index/templates-footbar') . 
         view('index/templates-footer');
