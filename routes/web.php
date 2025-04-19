@@ -13,6 +13,7 @@ Route::get('dokumentasi/api/customer', [IndexController::class, 'customer']);
 Route::get('dokumentasi/api/customer/all', [IndexController::class, 'customer_all']);
 Route::get('dokumentasi/api/customer/detail', [IndexController::class, 'customer_detail']);
 Route::get('dokumentasi/api/customer/add', [IndexController::class, 'customer_add']);
+Route::get('dokumentasi/api/customer/update', [IndexController::class, 'customer_update']);
 Route::get('dokumentasi/api/customer/delete', [IndexController::class, 'customer_delete']);
 
 Route::get('dashboard', function () {

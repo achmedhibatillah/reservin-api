@@ -18,7 +18,11 @@ class AccessTokenMiddleware
         $access_token = env('ACCESS_TOKEN');
 
         if ($request->access_token !== $access_token) {
-            return redirect('/')->with('error', 'You are not authenticated.');
+            // return redirect('/')->with('error', 'You are not authenticated.');
+            return response()->json([
+                'status' => 'error',
+                'message' => 'You are not authenticated.',
+            ]);
         }
 
         return $next($request);

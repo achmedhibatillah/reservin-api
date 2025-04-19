@@ -108,6 +108,28 @@ class IndexController extends Controller
         view('index/templates-footer');
     }
 
+    public function customer_detail()
+    {
+        $info = [
+            'page' => 'api-customer',
+            'title' => 'Akses data customer → Lihat detail data customer'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-customer-detail', [
+            'info' => $info,
+            'tables' => $tables,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
     public function customer_add()
     {
         $info = [
@@ -125,6 +147,30 @@ class IndexController extends Controller
         view('index/api-customer-add', [
             'info' => $info,
             'tables' => $tables,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function customer_update()
+    {
+        $info = [
+            'page' => 'api-customer',
+            'title' => 'Akses data customer → Ubah data customer'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $customers = Customer::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-customer-update', [
+            'info' => $info,
+            'tables' => $tables,
+            'customers' => $customers,
         ]) . 
         view('index/templates-footbar') . 
         view('index/templates-footer');
