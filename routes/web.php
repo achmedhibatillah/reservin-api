@@ -17,6 +17,11 @@ Route::get('dokumentasi/api/customer/update', [IndexController::class, 'customer
 Route::get('dokumentasi/api/customer/delete', [IndexController::class, 'customer_delete']);
 
 Route::get('dokumentasi/api/admin', [IndexController::class, 'admin']);
+Route::get('dokumentasi/api/admin/all', [IndexController::class, 'admin_all']);
+Route::get('dokumentasi/api/admin/detail', [IndexController::class, 'admin_detail']);
+Route::get('dokumentasi/api/admin/add', [IndexController::class, 'admin_add']);
+Route::get('dokumentasi/api/admin/update', [IndexController::class, 'admin_update']);
+Route::get('dokumentasi/api/admin/delete', [IndexController::class, 'admin_delete']);
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
