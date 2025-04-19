@@ -55,6 +55,7 @@ class API_RoomController extends Controller
             'room_id' => LogicController::generateUniqueId('room', 'room_id'),
             'room_name' => $request->room_name,
             'room_desc' => $request->room_desc,
+            'room_kategori' => $request->room_kategori,
             'room_capacity' => $request->room_capacity,
             'room_price' => $request->room_price,
             'room_available' => $request->room_available,
@@ -95,6 +96,7 @@ class API_RoomController extends Controller
         $data = [
             'room_name' => ($request->room_name) ? $request->room_name : $olddata->room_name,
             'room_desc' => ($request->room_desc) ? $request->room_desc : $olddata->room_desc,
+            'room_kategori' => ($request->room_kategori) ? $request->room_kategori : $olddata->room_kategori,
             'room_capacity' => ($request->room_capacity) ? $request->room_capacity : $olddata->room_capacity,
             'room_price' => ($request->room_price) ? $request->room_price : $olddata->room_price,
             'room_available' => ($request->room_available) ? $request->room_available : $olddata->room_available,

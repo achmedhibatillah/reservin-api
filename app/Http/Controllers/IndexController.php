@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Booking;
 use App\Models\Customer;
+use App\Models\Facility;
 use App\Models\Room;
+use App\Models\RoomImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -432,6 +435,54 @@ class IndexController extends Controller
         view('index/templates-footer');
     }
 
+    public function room_image_add()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room → Tambah data gambar room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $rooms = Room::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room-image-add', [
+            'info' => $info,
+            'tables' => $tables,
+            'rooms' => $rooms,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function room_facility_add()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room → Tambah data fasilitas room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $rooms = Room::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room-facility-add', [
+            'info' => $info,
+            'tables' => $tables,
+            'rooms' => $rooms,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
     public function room_update()
     {
         $info = [
@@ -475,6 +526,192 @@ class IndexController extends Controller
             'info' => $info,
             'tables' => $tables,
             'rooms' => $rooms,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function room_image_delete()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room → Hapus data gambar room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $ri = RoomImage::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room-image-delete', [
+            'info' => $info,
+            'tables' => $tables,
+            'ri' => $ri,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function room_facility_delete()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room → Hapus data fasilitas room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $facilities = Facility::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room-facility-delete', [
+            'info' => $info,
+            'tables' => $tables,
+            'facilities' => $facilities,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function booking()
+    {
+        $info = [
+            'page' => 'api-booking',
+            'title' => 'Akses data booking'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-booking', [
+            'info' => $info,
+            'tables' => $tables,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function booking_all()
+    {
+        $info = [
+            'page' => 'api-booking',
+            'title' => 'Akses data booking → Lihat semua data booking'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-booking-all', [
+            'info' => $info,
+            'tables' => $tables,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function booking_detail()
+    {
+        $info = [
+            'page' => 'api-booking',
+            'title' => 'Akses data booking → Lihat detail data booking'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $bookings = Booking::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-booking-detail', [
+            'info' => $info,
+            'tables' => $tables,
+            'bookings' => $bookings,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function booking_add()
+    {
+        $info = [
+            'page' => 'api-booking',
+            'title' => 'Akses data booking → Tambah data booking'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-booking-add', [
+            'info' => $info,
+            'tables' => $tables,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function booking_update()
+    {
+        $info = [
+            'page' => 'api-booking',
+            'title' => 'Akses data booking → Ubah data booking'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $bookings = Booking::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-booking-update', [
+            'info' => $info,
+            'tables' => $tables,
+            'bookings' => $bookings,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function booking_delete()
+    {
+        $info = [
+            'page' => 'api-booking',
+            'title' => 'Akses data booking → Hapus data booking'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $bookings = Booking::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-booking-delete', [
+            'info' => $info,
+            'tables' => $tables,
+            'bookings' => $bookings,
         ]) . 
         view('index/templates-footbar') . 
         view('index/templates-footer');

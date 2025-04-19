@@ -13,12 +13,24 @@
     </div>
     <div class="col-2"></div>
     <div class="col-3 p-1 d-flex">
+        <a href="{{ url('dokumentasi/api/room/image/add') }}" class="btn btn-sm d-flex justify-content-center align-items-center btn-warning w-100 fsz-10 h-100">Tambah data gambar room</a>
+    </div>
+    <div class="col-3 p-1 d-flex">
+        <a href="{{ url('dokumentasi/api/room/facility/add') }}" class="btn btn-sm d-flex justify-content-center align-items-center btn-warning w-100 fsz-10 h-100">Tambah data fasilitas room</a>
+    </div>
+    <div class="col-3 p-1 d-flex">
         <a href="{{ url('dokumentasi/api/room/update') }}" class="btn btn-sm d-flex justify-content-center align-items-center btn-primary w-100 fsz-10 h-100">Ubah data room</a>
     </div>
+    <div class="col-2"></div>
     <div class="col-3 p-1 d-flex">
         <a href="{{ url('dokumentasi/api/room/delete') }}" class="btn btn-sm d-flex justify-content-center align-items-center btn-danger w-100 fsz-10 h-100">Hapus data room</a>
     </div>
-    <div class="col-3"></div>
+    <div class="col-3 p-1 d-flex">
+        <a href="{{ url('dokumentasi/api/room/image/delete') }}" class="btn btn-sm d-flex justify-content-center align-items-center btn-danger w-100 fsz-10 h-100">Hapus data gambar room</a>
+    </div>
+    <div class="col-3 p-1 d-flex">
+        <a href="{{ url('dokumentasi/api/room/facility/delete') }}" class="btn btn-sm d-flex justify-content-center align-items-center btn-danger w-100 fsz-10 h-100">Hapus data fasilitas room</a>
+    </div>
 </div>
 <hr>
 <div class="">

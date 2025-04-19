@@ -22,7 +22,8 @@
 </div>
 <hr>
 <div class="">
-    <form action="{{ url('api/customer/add') }}" method="post">
+    <form action="{{ url('api/customer/update') }}" method="post">
+        @method('PUT')
         <div class="mb-3">
             <p class="m-0">Request Method :</p>
             <p class="text-primary fw-bold">PUT</p>

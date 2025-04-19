@@ -27,8 +27,19 @@ Route::get('dokumentasi/api/room', [IndexController::class, 'room']);
 Route::get('dokumentasi/api/room/all', [IndexController::class, 'room_all']);
 Route::get('dokumentasi/api/room/detail', [IndexController::class, 'room_detail']);
 Route::get('dokumentasi/api/room/add', [IndexController::class, 'room_add']);
+Route::get('dokumentasi/api/room/image/add', [IndexController::class, 'room_image_add']);
+Route::get('dokumentasi/api/room/facility/add', [IndexController::class, 'room_facility_add']);
 Route::get('dokumentasi/api/room/update', [IndexController::class, 'room_update']);
 Route::get('dokumentasi/api/room/delete', [IndexController::class, 'room_delete']);
+Route::get('dokumentasi/api/room/image/delete', [IndexController::class, 'room_image_delete']);
+Route::get('dokumentasi/api/room/facility/delete', [IndexController::class, 'room_facility_delete']);
+
+Route::get('dokumentasi/api/booking', [IndexController::class, 'booking']);
+Route::get('dokumentasi/api/booking/all', [IndexController::class, 'booking_all']);
+Route::get('dokumentasi/api/booking/detail', [IndexController::class, 'booking_detail']);
+Route::get('dokumentasi/api/booking/add', [IndexController::class, 'booking_add']);
+Route::get('dokumentasi/api/booking/update', [IndexController::class, 'booking_update']);
+Route::get('dokumentasi/api/booking/delete', [IndexController::class, 'booking_delete']);
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');

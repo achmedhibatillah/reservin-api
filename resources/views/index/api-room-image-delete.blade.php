@@ -34,24 +34,37 @@
 </div>
 <hr>
 <div class="">
-    <div class="mb-3">
-        <p class="m-0">Request Method :</p>
-        <p class="text-success fw-bold">GET</p>
-    </div>
-    <div class="mb-3">
-        <p class="m-0">Request URL :</p>
-        <div class="p-2 overflow-scroll">
-            <p class="m-0 fw-bold" style="white-space: nowrap;">{{ url('api/room/detail/{room_id}?access_token=' . env('ACCESS_TOKEN')) }}</p>
+    <form action="{{ url('api/room-image/delete') }}" method="post">
+        @csrf 
+        @method('DELETE')
+        <div class="mb-3">
+            <p class="m-0">Request Method :</p>
+            <p class="text-danger fw-bold">DELETE</p>
         </div>
-    </div>
-    <div class="">
-        <p class="m-0">Request x-www-form :</p>
-        <p class="text-secondary">Tidak perlu</p>
-    </div>
-    @if(!$rooms->isNotEmpty())
-        <p class="m-0 ms-2 fsz-10 text-danger mb-3"><i class="fas fa-exclamation-circle me-1"></i>Data room masih kosong. Tambah <a href="{{ url('dokumentasi/api/room/add') }}" class="td-hover">di sini.</a></p>
-    @endif
-    <div class="d-flex">
-        <a href="{{ url('api/room/detail/' . ($rooms->isNotEmpty() ? $rooms[0]->room_id : 'room_id') . '?access_token=' . env('ACCESS_TOKEN')) }}" target="_blank" class="btn btn-success d-block">coba <i class="fas fa-external-link-alt"></i></a>
-    </div>
+        <div class="mb-3">
+            <p class="m-0">Request URL :</p>
+            <div class="p-2 overflow-scroll">
+                <p class="m-0 fw-bold" style="white-space: nowrap;">{{ url('api/room-image/delete') }}</p>
+            </div>
+        </div>
+        <div class="">
+            <p class="m-0">Request x-www-form :</p>
+            <ul>
+                <li>
+                    <p class="m-0">access_token</p>
+                    <input type="text" name="access_token" class="form-control" placeholder="..." value="{{ env('ACCESS_TOKEN') }}">
+                </li>
+                <li>
+                    <p class="m-0">ri_id</p>
+                    <input type="text" name="ri_id" class="form-control" placeholder="..." value="{{ ($ri->isNotEmpty()) ? $ri[0]->ri_id : '' }}">
+                </li>
+            </ul>
+        </div>
+        @if(!$ri->isNotEmpty())
+            <p class="m-0 ms-2 fsz-10 text-danger mb-3"><i class="fas fa-exclamation-circle me-1"></i>Data gambar room masih kosong. Tambah <a href="{{ url('dokumentasi/api/room/image/add') }}" class="td-hover">di sini.</a></p>
+        @endif
+        <div class="d-flex">
+            <button type="submit" class="btn btn-danger d-block">coba <i class="fas fa-external-link-alt"></i></button>
+        </div>
+    </form>
 </div>

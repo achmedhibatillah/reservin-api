@@ -21,7 +21,6 @@ class API_FacilityController extends Controller
 
         $data = [
             'facility_id' => LogicController::generateUniqueId('facility', 'facility_id'),
-            'facility_icon' => $request->facility_icon,
             'facility_name' => $request->facility_name,
             'room_id' => $request->room_id
         ];
