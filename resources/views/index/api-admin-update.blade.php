@@ -42,7 +42,7 @@
                 </li>
                 <li>
                     <p class="m-0">admin_id</p>
-                    <input type="text" name="admin_fullname" class="form-control" placeholder="..." value="{{ ($admins->isNotEmpty()) ? $admins[0]->admin_id : '' }}">
+                    <input type="text" name="admin_id" class="form-control" placeholder="..." value="{{ ($admins->isNotEmpty()) ? $admins[0]->admin_id : '' }}">
                 </li>
                 <li>
                     <p class="m-0">admin_fullname</p>

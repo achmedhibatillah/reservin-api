@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Customer;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -336,6 +337,144 @@ class IndexController extends Controller
             'info' => $info,
             'tables' => $tables,
             'admins' => $admins,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function room()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room', [
+            'info' => $info,
+            'tables' => $tables,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function room_all()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room → Lihat semua data room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room-all', [
+            'info' => $info,
+            'tables' => $tables,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function room_detail()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room → Lihat detail data room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $rooms = Room::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room-detail', [
+            'info' => $info,
+            'tables' => $tables,
+            'rooms' => $rooms,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function room_add()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room → Tambah data room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room-add', [
+            'info' => $info,
+            'tables' => $tables,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function room_update()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room → Ubah data room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $rooms = Room::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room-update', [
+            'info' => $info,
+            'tables' => $tables,
+            'rooms' => $rooms,
+        ]) . 
+        view('index/templates-footbar') . 
+        view('index/templates-footer');
+    }
+
+    public function room_delete()
+    {
+        $info = [
+            'page' => 'api-room',
+            'title' => 'Akses data room → Hapus data room'
+        ];
+
+        $tables = DB::select('SHOW TABLES');
+        $rooms = Room::get();
+
+        return 
+        view('index/templates-header') . 
+        view('index/templates-sidebar', [
+            'info' => $info,
+        ]) . 
+        view('index/api-room-delete', [
+            'info' => $info,
+            'tables' => $tables,
+            'rooms' => $rooms,
         ]) . 
         view('index/templates-footbar') . 
         view('index/templates-footer');

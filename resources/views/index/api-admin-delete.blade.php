@@ -27,7 +27,7 @@
         @method('DELETE')
         <div class="mb-3">
             <p class="m-0">Request Method :</p>
-            <p class="text-danger fw-bold">POST</p>
+            <p class="text-danger fw-bold">DELETE</p>
         </div>
         <div class="mb-3">
             <p class="m-0">Request URL :</p>

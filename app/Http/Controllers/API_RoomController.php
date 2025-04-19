@@ -6,6 +6,7 @@ use App\Models\Facility;
 use App\Models\Room;
 use App\Models\RoomImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class API_RoomController extends Controller
 {
@@ -32,6 +33,24 @@ class API_RoomController extends Controller
 
     public function add(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'room_name'      => 'required|string|max:255',
+            'room_desc'      => 'required|string|max:350',
+            'room_kategori'  => 'required|string|max:255',
+            'room_capacity'  => 'required|numeric|max:999999',
+            'room_price'     => 'required|numeric|max:999999999999999',
+            'room_available' => 'required|in:0,1',
+            'room_start'     => 'required|date_format:H:i',
+            'room_end'       => 'required|date_format:H:i',
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
         $data = [
             'room_id' => LogicController::generateUniqueId('room', 'room_id'),
             'room_name' => $request->room_name,
@@ -54,6 +73,24 @@ class API_RoomController extends Controller
     public function update(Request $request)
     {
         $olddata = Room::where('room_id', $request->room_id)->first();
+
+        $validator = Validator::make($request->all(), [
+            'room_name'      => 'string|max:255',
+            'room_desc'      => 'string|max:350',
+            'room_kategori'  => 'string|max:255',
+            'room_capacity'  => 'numeric|max:999999',
+            'room_price'     => 'numeric|max:999999999999999',
+            'room_available' => 'in:0,1',
+            'room_start'     => 'date_format:H:i',
+            'room_end'       => 'date_format:H:i',
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'errors' => $validator->errors()
+            ], 422);
+        }
 
         $data = [
             'room_name' => ($request->room_name) ? $request->room_name : $olddata->room_name,
