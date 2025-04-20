@@ -61,7 +61,7 @@
             </div>
         </li>
         <li class="mb-3">
-            <p class="m-0 font-mono mb-2">room_fullname</p>
+            <p class="m-0 font-mono mb-2">room_name</p>
             <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
                 <div class="d-flex align-items-center lh-1">
                     <i class="fas fa-circle fsz-5 me-1"></i>
@@ -70,28 +70,69 @@
             </div>
         </li>
         <li class="mb-3">
-            <p class="m-0 font-mono mb-2">room_email</p>
+            <p class="m-0 font-mono mb-2">room_desc</p>
             <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
                 <div class="d-flex align-items-center lh-1">
                     <i class="fas fa-circle fsz-5 me-1"></i>
-                    <p class="m-0 fsz-12">Varchar(255)</p>
-                </div>
-                <div class="d-flex align-items-center lh-1">
-                    <i class="fas fa-circle fsz-5 me-1"></i>
-                    <p class="m-0 fsz-12">Unique</p>
+                    <p class="m-0 fsz-12">Varchar(350)</p>
                 </div>
             </div>
         </li>
         <li class="mb-3">
-            <p class="m-0 font-mono mb-2">room_pass</p>
+            <p class="m-0 font-mono mb-2">room_kategori</p>
             <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
                 <div class="d-flex align-items-center lh-1">
                     <i class="fas fa-circle fsz-5 me-1"></i>
                     <p class="m-0 fsz-12">Varchar(255)</p>
                 </div>
+            </div>
+        </li>
+        <li class="mb-3">
+            <p class="m-0 font-mono mb-2">room_capacity</p>
+            <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
                 <div class="d-flex align-items-center lh-1">
                     <i class="fas fa-circle fsz-5 me-1"></i>
-                    <p class="m-0 fsz-12">Hashing with SHA-256</p>
+                    <p class="m-0 fsz-12">Integer</p>
+                </div>
+            </div>
+        </li>
+        <li class="mb-3">
+            <p class="m-0 font-mono mb-2">room_price</p>
+            <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
+                <div class="d-flex align-items-center lh-1">
+                    <i class="fas fa-circle fsz-5 me-1"></i>
+                    <p class="m-0 fsz-12">Big Integer</p>
+                </div>
+            </div>
+        </li>
+        <li class="mb-3">
+            <p class="m-0 font-mono mb-2">room_available</p>
+            <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
+                <div class="d-flex align-items-center lh-1">
+                    <i class="fas fa-circle fsz-5 me-1"></i>
+                    <p class="m-0 fsz-12">Integer</p>
+                </div>
+                <div class="d-flex align-items-center lh-1">
+                    <i class="fas fa-circle fsz-5 me-1"></i>
+                    <p class="m-0 fsz-12">Value just 0 or 1</p>
+                </div>
+            </div>
+        </li>
+        <li class="mb-3">
+            <p class="m-0 font-mono mb-2">room_start</p>
+            <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
+                <div class="d-flex align-items-center lh-1">
+                    <i class="fas fa-circle fsz-5 me-1"></i>
+                    <p class="m-0 fsz-12">Time</p>
+                </div>
+            </div>
+        </li>
+        <li class="mb-3">
+            <p class="m-0 font-mono mb-2">room_end</p>
+            <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
+                <div class="d-flex align-items-center lh-1">
+                    <i class="fas fa-circle fsz-5 me-1"></i>
+                    <p class="m-0 fsz-12">Time</p>
                 </div>
             </div>
         </li>
@@ -117,5 +158,5 @@
 </div>
 <hr>
 <div class="d-flex justify-content-start">
-    <img src="{{ asset('assets/images/static/erd-room.png') }}" style="width:40%;">
+    <img src="{{ asset('assets/images/static/erd-room.png') }}" style="width:80%;">
 </div>
