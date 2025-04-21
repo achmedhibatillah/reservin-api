@@ -37,7 +37,11 @@
     <p class="m-0 fsz-10 text-secondary">Tabel utama</p>
     <p class="fw-bold">room</p>
     <p class="m-0 fsz-10 text-secondary">Tabel yang berelasi</p>
-    <p class="fw-bold">-</p>
+    <ul class="fw-bold">
+        <li>room_image : room (1) - room_image (M)</li>
+        <li>room_facility : room (1) - room_facility (M)</li>
+        <li>booking : room (1) - booking (M)</li>
+    </ul>
 </div>
 <hr>
 <div class="">

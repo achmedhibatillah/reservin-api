@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('admin_fullname', 255);
             $table->string('admin_email', 255)->unique();
             $table->string('admin_pass', 255);
+            $table->integer('admin_who');
             $table->timestamps();
         });
     }

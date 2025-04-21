@@ -71,6 +71,23 @@
             </div>
         </li>
         <li class="mb-3">
+            <p class="m-0 font-mono mb-2">admin_who</p>
+            <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
+                <div class="d-flex align-items-center lh-1">
+                    <i class="fas fa-circle fsz-5 me-1"></i>
+                    <p class="m-0 fsz-12">Integer</p>
+                </div>
+                <div class="d-flex align-items-center lh-1">
+                    <i class="fas fa-circle fsz-5 me-1"></i>
+                    <p class="m-0 fsz-12">Only 0 (root) or 1 (admin)</p>
+                </div>
+                <div class="d-flex align-items-center lh-1">
+                    <i class="fas fa-circle fsz-5 me-1"></i>
+                    <p class="m-0 fsz-12">Root data cannot be added, edited, or deleted</p>
+                </div>
+            </div>
+        </li>
+        <li class="mb-3">
             <p class="m-0 font-mono mb-2">admin_pass</p>
             <div class="m-0 d-flex flex-wrap align-items-center gap-2 text-secondary">
                 <div class="d-flex align-items-center lh-1">

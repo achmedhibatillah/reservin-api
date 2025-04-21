@@ -40,6 +40,7 @@ class API_AdminController extends Controller
             'admin_id' => LogicController::generateUniqueId('admin', 'admin_id'),
             'admin_fullname' => $request->admin_fullname,
             'admin_email' => $request->admin_email,
+            'admin_who' => 1,
             'admin_pass' => Hash::make($request->admin_pass),
         ];
 
@@ -71,6 +72,7 @@ class API_AdminController extends Controller
         $data = [
             'admin_fullname' => ($request->admin_fullname) ? $request->admin_fullname : $olddata->admin_fullname,
             'admin_email' => ($request->admin_email) ? $request->admin_email : $olddata->admin_email,
+            'admin_who' => 1,
             'admin_pass' => ($request->admin_pass) ? Hash::make($request->admin_pass) : $olddata->admin_pass,
         ];
 
