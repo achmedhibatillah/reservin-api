@@ -15,6 +15,7 @@ class Admin extends Model
         'admin_id',
         'admin_fullname',
         'admin_email',
+        'admin_who',
         'admin_pass',
     ];
 }
